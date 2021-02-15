@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2021-02-12T11:38:14 EST" name="Default suite" finished-at="2021-02-12T11:39:41 EST" duration-ms="86799">
+    <groups>
+    </groups>
+    <test started-at="2021-02-12T11:38:14 EST" name="Default test" finished-at="2021-02-12T11:39:41 EST" duration-ms="86799">
+      <class name="com.crm.qa.testcases.CompanyPageTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.crm.qa.testcases.CompanyPageTest@429bffaa]" started-at="2021-02-12T11:38:14 EST" name="setUp" finished-at="2021-02-12T11:38:39 EST" duration-ms="25127" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="CompanyLink()[pri:1, instance:com.crm.qa.testcases.CompanyPageTest@429bffaa]" started-at="2021-02-12T11:38:39 EST" name="CompanyLink" finished-at="2021-02-12T11:38:48 EST" duration-ms="8442" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CompanyLink -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:com.crm.qa.testcases.CompanyPageTest@429bffaa]" started-at="2021-02-12T11:38:48 EST" name="teardown" finished-at="2021-02-12T11:38:49 EST" duration-ms="878" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.crm.qa.testcases.CompanyPageTest@429bffaa]" started-at="2021-02-12T11:38:49 EST" name="setUp" finished-at="2021-02-12T11:39:05 EST" duration-ms="16583" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="newCompanylink()[pri:2, instance:com.crm.qa.testcases.CompanyPageTest@429bffaa]" started-at="2021-02-12T11:39:05 EST" name="newCompanylink" finished-at="2021-02-12T11:39:09 EST" duration-ms="3686" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- newCompanylink -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:com.crm.qa.testcases.CompanyPageTest@429bffaa]" started-at="2021-02-12T11:39:09 EST" name="teardown" finished-at="2021-02-12T11:39:10 EST" duration-ms="855" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.crm.qa.testcases.CompanyPageTest@429bffaa]" started-at="2021-02-12T11:39:11 EST" name="setUp" finished-at="2021-02-12T11:39:27 EST" duration-ms="16419" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="newCompnyFormData(java.lang.String, java.lang.String, [Ljava.lang.CharSequence;)[pri:3, instance:com.crm.qa.testcases.CompanyPageTest@429bffaa]" started-at="2021-02-12T11:39:27 EST" name="newCompnyFormData" data-provider="CompnyData" finished-at="2021-02-12T11:39:40 EST" duration-ms="12770" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[Patel Cash and Carry]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[IT Industry]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[[Ljava.lang.CharSequence;@4fc5563d]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- newCompnyFormData -->
+        <test-method is-config="true" signature="teardown()[pri:0, instance:com.crm.qa.testcases.CompanyPageTest@429bffaa]" started-at="2021-02-12T11:39:40 EST" name="teardown" finished-at="2021-02-12T11:39:41 EST" duration-ms="905" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardown -->
+      </class> <!-- com.crm.qa.testcases.CompanyPageTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
