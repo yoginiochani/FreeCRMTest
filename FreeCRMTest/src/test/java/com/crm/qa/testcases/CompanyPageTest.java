@@ -1,8 +1,6 @@
 package com.crm.qa.testcases;
 
-import org.junit.After;
 import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -64,22 +62,24 @@ public class CompanyPageTest extends TestBase {
 	@DataProvider
 	public Object[][] CompnyData()
 	{
-		Object data[][] = newCompanyData.getnewCompanyData("new_company_data"); //passing sheetName which is "Login" in excel
-		return data;
+		Object data[][] = newCompanyData.getnewCompanyData("new_company_data"); //passing sheetName which is "new_compnay_data" in excel
+		return data;                 //newCompanyData is class and getnewCompnayData is method in that class.
 	}
 	
 	@Test(priority = 3, dataProvider = "CompnyData")
-	public void newCompnyFormData(String companyName, String industry, CharSequence[] annualRevenue) throws InterruptedException
+	public void newCompnyFormData(String companyName, String industry, String annualRevenue, String Employees, String identifier, String taxnum, String phonenum, String faxnum) throws InterruptedException
+			//, CharSequence[] identifier, CharSequence[] TaxNum, CharSequence[] Phonenum, CharSequence[] Faxnum) throws InterruptedException
 	{
 		cmpnypage.newCompanyhoover();
 		Thread.sleep(2000);
-		cmpnypage.companydata(companyName, industry, annualRevenue);
+		cmpnypage.companydata(companyName, industry, annualRevenue, Employees,identifier, taxnum, phonenum, faxnum);
+				//, identifier, TaxNum, Phonenum, Faxnum);
 		System.out.println("Entered two data, Company name and industry");
 		System.out.println("Third test is passed");
 		
 	
 		cmpnypage.logout();
-		System.out.println("I looged out from application");
+		System.out.println("I logged out from application");
 	}
 	
 	@AfterMethod     //if you say @AfterTest, then it will execute all the test at once and teardown method last only once. 

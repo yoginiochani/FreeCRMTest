@@ -6,12 +6,24 @@
   </listeners>
   <test thread-count="5" name="FREE CRM TEST SUITES(failed)">
     <classes>
+      <class name="com.crm.qa.testcases.LoginPageTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="tearDown"/>
+          <include name="LoginPageTitleTest"/>
+        </methods>
+      </class> <!-- com.crm.qa.testcases.LoginPageTest -->
+      <class name="com.crm.qa.testcases.DealsPageTest">
+        <methods>
+          <include name="DealsFormTest"/>
+          <include name="tearDown"/>
+          <include name="setUp"/>
+        </methods>
+      </class> <!-- com.crm.qa.testcases.DealsPageTest -->
       <class name="com.crm.qa.testcases.ContactsPageTest">
         <methods>
-          <include name="contactLinkTest"/>
           <include name="setUp"/>
           <include name="teardown"/>
-          <include name="tlinks"/>
           <include name="hooverOverContact"/>
         </methods>
       </class> <!-- com.crm.qa.testcases.ContactsPageTest -->

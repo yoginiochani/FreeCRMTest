@@ -9,13 +9,12 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 
-public class newCompanyData {
+public class LoginTestData {
 	static Workbook book;
 	static Sheet sheet;
-	//public static String filepath = "C:\\Yogini\\eclipse.workspace\\FreeCRMTest\\src\\main\\java\\com\\crm\\qa\\testdata\\crm_new_company.xlsx";
-	public static String filepath = "C:\\Users\\tilak\\git\\FreeCRMTest\\FreeCRMTest\\src\\main\\java\\com\\crm\\qa\\testdata\\crm_new_company.xlsx";
+	public static String filepath = "C:\\Users\\tilak\\git\\FreeCRMTest\\FreeCRMTest\\src\\main\\java\\com\\crm\\qa\\testdata\\crm_login_testdata.xlsx";
 	
-	public static Object[][] getnewCompanyData(String sheetName)
+	public static Object[][] getloginTestData(String sheetName)
 	{
 		
 		FileInputStream file = null;
@@ -47,6 +46,5 @@ public class newCompanyData {
 		return data;
 	}
 	
+
 }
-
-

@@ -48,22 +48,22 @@ public class TestBase
 	
 	public static void initialization()
 	{
-		System.out.println("I am in initialization method now");
+		//System.out.println("I am in initialization method now");
 		String browserName = prop.getProperty("Browser");  //reading browser name from property file, configu.properties
 		System.out.println(browserName);
 		
 		if(browserName.trim().equals("Chrome"))
 		{
-			System.out.println("I am in if statement");
+			
 			//System.setProperty("webdriver.chrome.driver", "C:\\Yogini\\chromedriver\\chromedriver.exe"); //location of browser in local drive
-			System.setProperty("webdriver.chrome.driver", "C:\\Yogini\\eclipse.workspace\\FreeCRMTest\\src\\chromedriver.exe");
-			System.out.println("next line");
+			System.setProperty("webdriver.chrome.driver", "C:\\Users\\tilak\\git\\FreeCRMTest\\FreeCRMTest\\src\\chromedriver.exe");
 			driver =new ChromeDriver();
 		}
 		else if(browserName.equals("Firefox"))
 		{
-			System.setProperty("webdriver.gecko.driver", "C:\\Yogini\\geckoDriver\\geckodriver-v0.28.0-win64\\geckodriver.exe"); //location of browser in local drive
-			System.setProperty("webdriver.firefox.bin", "C:\\Program Files\\Mozilla Firefox\\firefox.exe");
+			//System.setProperty("webdriver.gecko.driver", "C:\\Yogini\\geckoDriver\\geckodriver-v0.28.0-win64\\geckodriver.exe"); //location of browser in local drive
+			//System.setProperty("webdriver.firefox.bin", "C:\\Program Files\\Mozilla Firefox\\firefox.exe");
+			System.setProperty("Webdriver, gecko driver","C:\\Users\\tilak\\git\\FreeCRMTest\\FreeCRMTest\\src\\geckodriver.exe");
 			driver = new FirefoxDriver();
 		}
 		
@@ -86,7 +86,7 @@ public class TestBase
 		
 		String url = prop.getProperty("url");
 		System.out.println("the url is " + url);
-		driver.get(prop.getProperty("url")); //reading url from property file by using prop object
-		
+		//driver.get(prop.getProperty("url")); //reading url from property file by using prop object
+		driver.navigate().to(prop.getProperty("url"));
 	}
 }

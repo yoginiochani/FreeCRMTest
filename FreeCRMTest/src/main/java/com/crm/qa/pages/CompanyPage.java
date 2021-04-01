@@ -14,7 +14,9 @@ public class CompanyPage extends TestBase
 {
 	
 	WebElement Companylink, clientLookUp, clientLookUpButton, hoovertocompany;
-	WebElement cmpnyname, industryy, ann_Revenue, employeess, logout;
+	WebElement cmpnyname, industryy, ann_Revenue, employeess, logout, employees;
+	
+	
 	
 	public String companylink() throws InterruptedException
 	{
@@ -62,14 +64,17 @@ public class CompanyPage extends TestBase
 		
 	}
 	
-	public void companydata(String compnyname, String industry, CharSequence[] annualRevenue) throws InterruptedException
+	public void companydata(String compnyname, String industry, String annualRevenue, String Employees, String identifier, String taxnum, String phonenum, String faxnum) throws InterruptedException
+			//, CharSequence[] identifier, CharSequence[] TaxNum, CharSequence[] Phonenum, CharSequence[] Faxnum) throws InterruptedException
 	{
 		cmpnyname = driver.findElement(By.id("company_name"));
 		cmpnyname.sendKeys(compnyname);
 		Thread.sleep(1000);
+		
 		industryy = driver.findElement(By.name("industry"));
 		industryy.sendKeys(industry);
 		Thread.sleep(1000);
+		
 		//int annual_rev = annRevenue;
 		//driver.findElement(By.cssSelector("input[name = 'annual_revenue']")).sendKeys(""+annRevenue);
 		driver.findElement(By.name("annual_revenue")).sendKeys(annualRevenue);
@@ -82,6 +87,23 @@ public class CompanyPage extends TestBase
 		category.selectByVisibleText("Client");
 		Thread.sleep(2000);
 		System.out.println("The category is selected");
+		
+		employees = driver.findElement(By.name("num_of_employees"));
+		employees.sendKeys(Employees);
+		
+		driver.findElement(By.name("identifier")).sendKeys(identifier);
+		Thread.sleep(2000);
+		
+		driver.findElement(By.name("vat_number")).sendKeys(taxnum);;
+		
+		
+		driver.findElement(By.id("phone")).sendKeys(phonenum);
+		
+		driver.findElement(By.id("fax")).sendKeys(faxnum);
+		
+		
+		
+		
 		
 		
 	}

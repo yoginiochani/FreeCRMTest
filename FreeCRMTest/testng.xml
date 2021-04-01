@@ -9,12 +9,15 @@
   
   <test thread-count="5" name="FREE CRM TEST SUITES">
     <classes>
+    <class name="com.crm.qa.testcases.HomePageTest"/>
       <class name="com.crm.qa.testcases.ContactsPageTest"/>
       <class name="com.crm.qa.testcases.SignUpPageTest"/>
       <class name="com.crm.qa.testcases.LoginPageTest"/>
       <class name="com.crm.qa.testcases.DealsPageTest"/>
       <class name="com.crm.qa.testcases.ReportPageTest"/>
       <class name="com.crm.qa.testcases.CompanyPageTest"/>
+      <class name="com.crm.qa.testcases.Login_Test_DataTest"/>
+      
     </classes>
   </test> <!-- Test -->
   

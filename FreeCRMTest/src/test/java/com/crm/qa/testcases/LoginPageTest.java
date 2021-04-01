@@ -52,53 +52,63 @@ public class LoginPageTest extends TestBase {
 		//testutil = new TestUtil();
 		contactspage = new ContactsPage();
 		homepage= new HomePage();
-		homepage = loginpage.login(prop.getProperty("username"), prop.getProperty("password"));
+		//homepage = loginpage.login(prop.getProperty("username"), prop.getProperty("password"));
 		
 	}
 	
 	@Test (priority = 1)
-	public void HomePageTitleTest() throws InterruptedException
+	public void LoginPageTitleTest() throws InterruptedException
 	{
-		String ActualTitle = homepage.validateHomePageTitle1();
+		String ActualTitle = loginpage.ValidateLoginPageTitle(); //goes to method and gets the homepage title and returns it.
 		System.out.println(ActualTitle);
 		Thread.sleep(2000);
-		String Expected = "CRMPRO";
+		String Expected = "CRMPRO  - CRM software for customer relationship management, sales, and support.";
 		System.out.println(Expected);	
-		Assert.assertEquals(ActualTitle, Expected, "The title does not match");
+		Assert.assertEquals(ActualTitle, Expected, "The title does not match"); // if the title does not match, then it will fail and message will display.
 	}
 	
 	@Test(priority = 2)
-	public void totalLinksOnHomePage()
+	public void validateCRMLogoTest()
 	{
-		int total = homepage.allLinks();
-		System.out.println("Total links on home page are: " + total);
-		
+		boolean result = loginpage.ValidateCRMLogo();
+		Assert.assertTrue(result); // test will pass if the result is true otherwise test will fail
 	}
 	
-	@Test (priority = 3)
-	public void validateuserTest() throws InterruptedException
-	{
-		boolean flag = homepage.validateuser();
-		Assert.assertTrue(flag);
-		}
-	
-	@Test(priority = 4)
-	public void validateContactLinkTest() throws InterruptedException
-	{
-		contactspage = homepage.validateContactLink();
-	}
-	
-	/*
 	@Test(priority = 3)
-	public void verifyContactLinkTest() throws InterruptedException
+	public void loginTest() throws InterruptedException
 	{
-		Thread.sleep(3000);
-		contactspage = homepage.ContactLink();
-		System.out.println("I clicked on contact link");
-	}*/
-		
+		homepage = loginpage.login(prop.getProperty("username"), prop.getProperty("password"));
+	}
 	
-	@AfterMethod
+	@Test(priority =4)
+	public void verifyContactLinkTest()
+	{
+		boolean contactlinkdisplay = loginpage.contactLink();  //to check if the contact link is displayed on loginpage 
+		boolean contactlinkenabled = loginpage.contactLinkenable(); //to check if the contact link is enabled or not.
+		
+		try {
+			Assert.assertTrue(contactlinkdisplay, "Contact link is not displayed");
+		}
+		catch(Exception e)
+		{
+			System.out.println("The exception is " + e.getMessage());
+		}
+		try {
+			Assert.assertTrue(contactlinkenabled, "Contact link is not enabled");
+		}
+		catch(Exception e)
+		{
+			System.out.println("The exception is " + e.getMessage());
+		}
+	}
+	
+	@Test(priority = 5)
+	public void gettotallinksonloginpage()
+	{
+		loginpage.totallinksonloginpage();
+	}
+	
+	@AfterMethod  //after every test, it will close the browser
 	public void tearDown() throws InterruptedException
 	{
 		Thread.sleep(1000);
